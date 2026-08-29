@@ -94,6 +94,8 @@ export function Hero() {
           </a>
           <a
             href={siteConfig.links.resume}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border text-sm text-text-secondary hover:text-text-primary hover:border-text-muted transition-all duration-200"
           >
             <FileText className="w-4 h-4" />
