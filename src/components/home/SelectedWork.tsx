@@ -14,9 +14,9 @@ export function SelectedWork() {
       subtitle="Production AI applications engineered and deployed end-to-end."
       connector
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         {projects.map((project, i) => (
-          <AnimateOnScroll key={project.slug} delay={i * 0.1}>
+          <AnimateOnScroll key={project.slug} delay={i * 0.1} className="h-full">
             <ProjectCard project={project} index={i} />
           </AnimateOnScroll>
         ))}
