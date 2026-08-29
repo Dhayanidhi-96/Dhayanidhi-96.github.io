@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dhayanidhi Palani — AI/ML Engineer Portfolio
 
-## Getting Started
+> Production-ready AI Engineer portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Configured for free static hosting on **GitHub Pages** with custom domain **dhayanidhi.me**.
 
-First, run the development server:
+## 🚀 Live Site & Domain
+- **Domain:** [https://dhayanidhi.me](https://dhayanidhi.me)
+- **Positioning:** AI/ML Engineer building production AI systems across LLMs, RAG, Computer Vision, and AI Infrastructure.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🛠️ Architecture & Tech Stack
+
+- **Framework:** Next.js (App Router, Static Export SSG)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4 + Custom Dark/Light Design Tokens
+- **Animations:** Framer Motion (restrained, scroll-triggered micro-interactions)
+- **Theme:** `next-themes` (Dark-first with smooth light mode toggle)
+- **Icons:** Lucide React + Custom SVG Brand Icons
+- **Deployment:** GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
+
+---
+
+## 📂 Project Structure
+
+```
+d:\Portfolio\
+├── .github/
+│   └── workflows/
+│       └── deploy.yml              # GitHub Actions CI/CD workflow
+├── public/
+│   ├── CNAME                       # dhayanidhi.me
+│   └── .nojekyll                   # Bypass Jekyll processing
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx              # Root layout with SEO metadata & ThemeProvider
+│   │   ├── page.tsx                # Single-page narrative homepage
+│   │   ├── globals.css             # Design tokens & color system
+│   │   └── projects/
+│   │       └── [slug]/
+│   │           └── page.tsx        # Dynamic SSG project case study pages
+│   ├── components/
+│   │   ├── home/                   # Hero, SelectedWork, TechStack, etc.
+│   │   ├── layout/                 # Navbar, Footer, Section
+│   │   ├── projects/               # ArchitectureDiagram, TechDecisions, ResultsGrid
+│   │   ├── shared/                 # AnimateOnScroll, CountUp, TechTag, Icons
+│   │   └── ui/                     # ThemeProvider, ThemeToggle
+│   └── data/
+│       ├── projects.ts             # 3 detailed case studies with architecture flows
+│       ├── experience.ts           # 3 internships data
+│       ├── techStack.ts            # Capability-grouped tech stack
+│       ├── achievements.ts         # Verified numbers
+│       └── siteConfig.ts           # Metadata, URLs, SEO defaults
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Deploying to GitHub Pages with `dhayanidhi.me`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Push to GitHub
+```bash
+git add .
+git commit -m "feat: complete AI/ML engineer portfolio"
+git remote add origin https://github.com/Dhayanidhi-96/dhayanidhi-96.github.io.git  # or your repo name
+git push -u origin main
+```
 
-## Learn More
+### 2. Configure GitHub Pages
+In your repository on GitHub:
+1. Go to **Settings** → **Pages**
+2. Under **Build and deployment** → **Source**, select **GitHub Actions**
+3. Under **Custom domain**, enter: `dhayanidhi.me`
+4. Check **Enforce HTTPS**
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Configure Namecheap DNS
+In your Namecheap account:
+1. Go to **Domain List** → Click **Manage** next to `dhayanidhi.me`
+2. Go to the **Advanced DNS** tab
+3. Add the following records:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| **A Record** | `@` | `185.199.108.153` | Automatic |
+| **A Record** | `@` | `185.199.109.153` | Automatic |
+| **A Record** | `@` | `185.199.110.153` | Automatic |
+| **A Record** | `@` | `185.199.111.153` | Automatic |
+| **CNAME Record** | `www` | `dhayanidhi-96.github.io` | Automatic |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💻 Local Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Run development server
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Test static export build
+npm run build
+```
